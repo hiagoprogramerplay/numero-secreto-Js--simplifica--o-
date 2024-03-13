@@ -8,6 +8,8 @@ paragráfo.innerHTML = 'Escolha um número entre 1 e 10';
     console.log('O botão foi clicado!')
 //};
 
+
+
 function exibirTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;    
@@ -16,6 +18,10 @@ function exibirTextoNaTela(tag, texto) {
 exibirTextoNaTela('h1', 'Jogo do número secreto');
 exibirTextoNaTela('p','Escolha um número entre 1 e 100' );
 
-functio verificarChute() {
+function verificarChute() {
     console.log('O botão foi clicado!')
 };
+
+function gerarNumeroAleatorio() {
+    parseInt(Math.random() * 10 + 1); 
+}
