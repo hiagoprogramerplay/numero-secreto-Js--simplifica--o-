@@ -24,9 +24,15 @@ function verificarChute() {
             exibirTextoNaTela('p', 'O número secreto é maior');
         }
         tentativas = tentativas + 1;
+        limparCampo();
     }
 }
 
 function gerarNumeroAleatorio() {
     return parseInt(Math.random() * 10 + 1); e
+}
+
+function limparCampo() {
+    chute = document.querySelector('input');
+    chute.value = ()
 }
