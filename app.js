@@ -1,3 +1,4 @@
+let listaDeNumerosSorteados = [];
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 
@@ -14,8 +15,7 @@ function exibirMensagemInicial() {
 exibirMensagemInicial();
 
 function verificarChute() {
-    let chute =  document.querySelector('input').value;
-    
+    let chute =  document.querySelector('input').value;   
     if (chute == numeroSecreto) {
         
         let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
@@ -35,9 +35,20 @@ function verificarChute() {
         limparCampo();
     }
 }
-
 function gerarNumeroAleatorio() {
-    return parseInt(Math.random() * 10 + 1); e
+   let numeroEscolhido = parseInt(Math.random() * 10 + 1); 
+   let quantidadeDeElementosNaLista = listaDeNumerosSorteados.length;
+
+   if (quantidadeDeElementosNaLista == 3) {
+    listaDeNumerosSorteados = [];
+    
+   }
+   if (listaDeNumerosSorteados.includes(numeroEscolhido)) {
+        return gerarNumeroAleatorio();
+   } else {
+        listaDeNumerosSorteados.push(numeroEscolhido);
+        return numeroEscolhido;
+   }
 }
 
 function limparCampo() {
